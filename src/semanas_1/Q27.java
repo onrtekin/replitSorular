@@ -14,28 +14,17 @@ String str=“Javaisalsoeasy”
 
 Output: a s
          */
-        String str="Javaisalsoeasy";
+        String str = "Javaisalsosasy";
 
-        String tekrarEden="";
-        String arr[]=new String[str.length()];
-        arr=str.toLowerCase().split("");
-        Arrays.sort(arr);
-        System.out.println(Arrays.toString(arr));
-        int sayac=0;
-        for (int i = 1; i <arr.length; i++) {
-            sayac=0;
-            if (arr[i - 1].equals(arr[i])) {
-                sayac++;
-                if (sayac >=1) {
-                    if (!arr[i].equals(tekrarEden)) {
-                        tekrarEden += arr[i] + " ";
-                    }
+        String tekrarEden = "";
+        for (int i = 0; i < str.length(); i++) {
+            for (int j = i+1; j < str.length(); j++) {
+                if(str.charAt(i)==str.charAt(j)&&!tekrarEden.contains(str.substring(i,i+1))){
+                    tekrarEden+=str.charAt(i)+" ";
                 }
             }
 
-        }System.out.println(tekrarEden);
-
-
-
     }
+        System.out.println(tekrarEden);
+}
 }
